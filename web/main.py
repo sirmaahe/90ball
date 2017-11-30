@@ -4,6 +4,7 @@ import aiohttp
 from sanic import Sanic
 from sanic.response import json
 
+
 app = Sanic(__name__)
 TELEGRAM_KEY = os.environ.get('TELEGRAM_KEY', '486300862:AAHZ4vv61mL5D9xUG9JX6yg9pqOD2IbbYDQ')
 ANSWERS = [
