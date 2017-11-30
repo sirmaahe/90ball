@@ -8,6 +8,7 @@ aiofiles==0.3.2           # via sanic
 aiohttp==2.3.5
 async-timeout==2.0.0      # via aiohttp
 chardet==3.0.4            # via aiohttp
+gunicorn==19.7.1
 httptools==0.0.9          # via sanic
 multidict==3.3.2          # via aiohttp, yarl
 sanic==0.6.0
