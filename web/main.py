@@ -5,7 +5,7 @@ from sanic import Sanic
 from sanic.response import json
 
 app = Sanic(__name__)
-TELEGRAM_KEY = os.environ.get('TELEGRAM_KEY')
+TELEGRAM_KEY = os.environ.get('TELEGRAM_KEY', '486300862:AAHZ4vv61mL5D9xUG9JX6yg9pqOD2IbbYDQ')
 ANSWERS = [
     'Человечек не захочет, кабанчик не вскочит',
     'Стоит обкашлять с братанами',
@@ -27,7 +27,7 @@ ANSWERS = [
 async def send_tg_message(chat_id, message):
     async with aiohttp.ClientSession() as session:
         async with session.post(
-            f'https://api.telegram.org/bot{TELEGRAM_KEY}/sendMessage/',
+            f'https://api.telegram.org/bot{TELEGRAM_KEY}/sendMessage',
             json={"chat_id": chat_id, "text": message}
         ) as resp:
             return await resp.json()
